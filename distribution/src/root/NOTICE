@@ -20,10 +20,10 @@ Copyright (c) 2008-2021 Hazelcast, Inc. All rights reserved.
 This product includes the following libraries with the following licenses:
 
 Apache License, Version 2.0
-  AWS SDK for Java - Bundle:1.11.976
-  AWS SDK for Java - Core:1.11.976
-  AWS Java SDK for Amazon Kinesis:1.11.976
-  JMES Path Query library:1.11.976
+  AWS SDK for Java - Bundle:1.11.934
+  AWS SDK for Java - Core:1.11.934
+  AWS Java SDK for Amazon Kinesis:1.11.934
+  JMES Path Query library:1.11.934
   HPPC Collections:0.7.1
   Jackson-annotations:2.11.2
   Jackson-core:2.11.2
@@ -63,7 +63,7 @@ Apache License, Version 2.0
   Flogger System Backend:0.5.1
   Google Logger:0.5.1
   Guava InternalFutureFailureAccess and InternalFutures:1.0.1
-  Guava: Google Core Libraries for Java:30.1-jre
+  Guava: Google Core Libraries for Java:29.0-jre
   Guava ListenableFuture only:9999.0-empty-to-avoid-conflict-with-guava
   Google HTTP Client Library for Java:1.36.0
   Jackson 2 extensions to the Google HTTP Client Library for Java.:1.36.0
@@ -120,10 +120,10 @@ Apache License, Version 2.0
   Apache Log4j:1.2.17
   ASM based accessors helper used by json-smart:1.2
   JSON Small and Fast Parser:2.3
-  Apache Avro:1.10.2
-  Apache Avro IPC:1.10.2
-  Apache Avro IPC Jetty:1.10.2
-  Apache Avro Mapred API:1.10.2
+  Apache Avro:1.9.2
+  Apache Avro IPC:1.9.2
+  Apache Avro IPC Jetty:1.9.2
+  Apache Avro Mapred API:1.9.2
   Calcite Core:1.23.0
   Calcite Linq4j:1.23.0
   Apache Calcite Avatica:1.16.0
@@ -198,7 +198,7 @@ Apache License, Version 2.0
   Apache Parquet Format Structures:1.11.1
   Apache Parquet Hadoop:1.11.1
   Apache Parquet Jackson:1.11.1
-  Apache Velocity - Engine:2.3
+  Apache Velocity - Engine:2.2
   Apache Yetus - Audience Annotations:0.12.0
   Jackson:1.9.13
   Data Mapper for Jackson:1.9.13
@@ -311,11 +311,9 @@ MIT License
   ClassGraph:4.8.66
   JOpt Simple:5.0.2
   Checker Qual:2.5.3
-  Checker Qual:3.5.0
+  Checker Qual:2.11.1
   Animal Sniffer Annotations:1.18
   SLF4J API Module:1.7.28
-Public Domain
-  XZ for Java:1.8
 Public Domain, per Creative Commons CC0
   HdrHistogram:2.1.9
 The GNU General Public License, v2 with FOSS exception

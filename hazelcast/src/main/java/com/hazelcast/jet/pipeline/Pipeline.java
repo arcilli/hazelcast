@@ -16,8 +16,8 @@
 
 package com.hazelcast.jet.pipeline;
 
+import com.hazelcast.internal.util.ServiceLoader;
 import com.hazelcast.jet.core.DAG;
-import com.hazelcast.jet.impl.pipeline.PipelineImpl;
 
 import javax.annotation.Nonnull;
 import java.io.Serializable;
@@ -52,7 +52,21 @@ public interface Pipeline extends Serializable {
      */
     @Nonnull
     static Pipeline create() {
-        return new PipelineImpl();
+        try {
+            Pipeline pipeline = ServiceLoader.load(Pipeline.class,
+                    Pipeline.class.getName(),
+                    Pipeline.class.getClassLoader());
+
+            if (pipeline != null) {
+                return pipeline;
+            } else {
+                throw new IllegalStateException("Could not create Pipeline, did you provide hazelcast-jet jar on " +
+                        "classpath?");
+            }
+        } catch (Exception e) {
+            throw new IllegalStateException("Could not create Pipeline, did you provide hazelcast-jet jar on " +
+                    "classpath?", e);
+        }
     }
 
     /**
