@@ -14,28 +14,9 @@
  * limitations under the License.
  */
 
-package com.hazelcast.jet.function;
-
-import java.io.Serializable;
-
-import static com.hazelcast.internal.util.ExceptionUtil.sneakyThrow;
-
-
-@FunctionalInterface
-public interface RunnableEx extends Runnable, Serializable {
-    void runEx() throws Exception;
-
-    @Override
-    default void run() {
-        try {
-            runEx();
-        } catch (Exception e) {
-            throw sneakyThrow(e);
-        }
-    }
-
-    static RunnableEx noop() {
-        return () -> {
-        };
-    }
-}
+/**
+ * Jet's Job Metric API.
+ *
+ * @since 3.2
+ */
+package com.hazelcast.jet.core.metrics;

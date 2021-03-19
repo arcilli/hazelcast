@@ -33,16 +33,11 @@ import com.hazelcast.jet.accumulator.LongAccumulator;
 import com.hazelcast.jet.accumulator.LongDoubleAccumulator;
 import com.hazelcast.jet.accumulator.LongLongAccumulator;
 import com.hazelcast.jet.accumulator.MutableReference;
-import com.hazelcast.jet.core.Processor;
 import com.hazelcast.jet.datamodel.ItemsByTag;
 import com.hazelcast.jet.datamodel.Tuple2;
 import com.hazelcast.jet.datamodel.Tuple3;
 import com.hazelcast.jet.function.TriFunction;
 import com.hazelcast.jet.impl.aggregate.AggregateOpAggregator;
-import com.hazelcast.jet.pipeline.BatchStage;
-import com.hazelcast.jet.pipeline.BatchStageWithKey;
-import com.hazelcast.jet.pipeline.GeneralStage;
-import com.hazelcast.jet.pipeline.StageWithWindow;
 import com.hazelcast.map.IMap;
 
 import javax.annotation.Nonnull;
@@ -60,9 +55,9 @@ import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 import static com.hazelcast.function.FunctionEx.identity;
+import static com.hazelcast.internal.serialization.impl.SerializationUtil.checkSerializable;
 import static com.hazelcast.jet.datamodel.Tuple2.tuple2;
 import static com.hazelcast.jet.datamodel.Tuple3.tuple3;
-import static com.hazelcast.jet.impl.util.Util.checkSerializable;
 
 /**
  * Utility class with factory methods for several useful aggregate

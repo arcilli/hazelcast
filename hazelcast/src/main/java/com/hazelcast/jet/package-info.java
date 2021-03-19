@@ -14,28 +14,12 @@
  * limitations under the License.
  */
 
-package com.hazelcast.jet.function;
-
-import java.io.Serializable;
-
-import static com.hazelcast.internal.util.ExceptionUtil.sneakyThrow;
-
-
-@FunctionalInterface
-public interface RunnableEx extends Runnable, Serializable {
-    void runEx() throws Exception;
-
-    @Override
-    default void run() {
-        try {
-            runEx();
-        } catch (Exception e) {
-            throw sneakyThrow(e);
-        }
-    }
-
-    static RunnableEx noop() {
-        return () -> {
-        };
-    }
-}
+/**
+ * Hazelcast Jet is a distributed computation engine running on top of
+ * Hazelcast IMDG technology. To use it, refer to the Javadoc on the
+ * {@link com.hazelcast.jet.pipeline Pipeline API} and to the Reference
+ * Manual.
+ *
+ * @since 3.0
+ */
+package com.hazelcast.jet;
