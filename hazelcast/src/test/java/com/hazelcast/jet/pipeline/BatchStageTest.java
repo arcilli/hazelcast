@@ -84,18 +84,18 @@ public class BatchStageTest extends PipelineTestSupport {
 
     @Test(expected = IllegalArgumentException.class)
     public void when_emptyPipelineToDag_then_exceptionInIterator() {
-        Pipeline.create().toDag().iterator();
+        (Pipeline.create().toDag()).iterator();
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void when_missingSink_then_exceptionInDagIterator() {
-        p.toDag().iterator();
+        (p.toDag()).iterator();
     }
 
     @Test
     public void when_minimalPipeline_then_validDag() {
         batchStageFromList(emptyList()).writeTo(sink);
-        assertTrue(p.toDag().iterator().hasNext());
+        assertTrue((p.toDag()).iterator().hasNext());
     }
 
     @Test
@@ -1356,7 +1356,7 @@ public class BatchStageTest extends PipelineTestSupport {
         p.readFrom(src)
                 .addTimestamps(o -> 0L, 0)
                 .writeTo(Sinks.noop());
-        DAG dag = p.toDag();
+        DAG dag = (DAG) p.toDag();
 
         // Then
         Vertex tsVertex = dag.getVertex("add-timestamps");
